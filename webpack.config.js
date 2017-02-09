@@ -3,10 +3,9 @@ var webpack = require('webpack');
 
 module.exports = {
   devtool:'eval-source-map',
-  entry:["./src/entry.js"],
+  entry:['webpack/hot/dev-server',__dirname + '/src/entry.js'],
   output:{
     path:__dirname + '/build',
-    publicPath:'./build/',
     filename:'bundle.js'
   },
   module: {
@@ -18,6 +17,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(), //热模块替换插件
+  ],
   devServer: {
     contentBase: './build',
     colors: true,
