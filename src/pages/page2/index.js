@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import './index.scss';
+import './index.less';
 
 class Page1 extends Component {
   constructor(props){

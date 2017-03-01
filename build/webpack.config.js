@@ -111,18 +111,18 @@ config.module.loaders.push({
   loaders: ['babel-loader?cacheDirectory=' + CACHE_PATH]
 });
 
-// 编译 sass
+// 编译 less
 if (__DEV__) {
   config.module.loaders.push({
-    test: /\.(scss|css)$/,
-    loaders: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+    test: /\.(less|css)$/,
+    loaders: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader']
   });
 } else {
   config.module.loaders.push({
-    test: /\.(scss|css)$/,
+    test: /\.(less|css)$/,
     loader: ExtractTextPlugin.extract({
-      fallbackLoader: 'style-loader',
-      loader: 'css-loader!postcss-loader!sass-loader'
+      fallback: 'style-loader',
+      use: 'css-loader!postcss-loader!less-loader'
     })
   });
   config.plugins.push(
