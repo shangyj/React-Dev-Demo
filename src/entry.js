@@ -6,3 +6,11 @@ ReactDom.render(
     <Component1 />,
     document.getElementById('content')
 );
+$.ajax({
+  type:'get',
+  url:'/test/queryPageByCondition',
+  dataType:'json',
+  success:function(data){
+    console.log(data);
+  }
+})
