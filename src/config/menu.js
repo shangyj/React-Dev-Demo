@@ -35,77 +35,42 @@ const menuitems = [
     list:{
     },
     name:"page4",
-    label:"jsonp查询",
+    label:"基础档案",
     icon:PersonAdd,
   },
   {
     list:{
     },
     name:"page5",
-    label:"jsonp查询",
+    label:"库存管理",
     icon:PersonAdd,
   },
   {
     list:{
     },
     name:"page6",
-    label:"jsonp查询",
+    label:"订单管理",
     icon:PersonAdd,
   },
   {
     list:{
     },
     name:"page7",
-    label:"jsonp查询",
+    label:"销售管理",
     icon:PersonAdd,
   },
   {
     list:{
     },
     name:"page8",
-    label:"jsonp查询",
+    label:"配置管理",
     icon:PersonAdd,
   },
   {
     list:{
     },
     name:"page9",
-    label:"jsonp查询",
-    icon:PersonAdd,
-  },
-  {
-    list:{
-    },
-    name:"page10",
-    label:"jsonp查询",
-    icon:PersonAdd,
-  },
-  {
-    list:{
-    },
-    name:"page11",
-    label:"jsonp查询",
-    icon:PersonAdd,
-  },
-  {
-    list:{
-    },
-    name:"page12",
-    label:"jsonp查询",
-    icon:PersonAdd,
-  },
-  {
-    list:{
-    },
-    name:"page13",
-    label:"jsonp查询",
-    icon:PersonAdd,
-  },
-  {
-    list:{
-    },
-    name:"page14",
-    label:"jsonp查询",
+    label:"会员管理",
     icon:PersonAdd,
   }
 ];

@@ -12,6 +12,7 @@ import '../css/common.less';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
+import CircularProgress from 'material-ui/CircularProgress';
 import MenuExampleIcons from '../components/navigation/navition.jsx'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 // pages
@@ -19,34 +20,29 @@ import Page1 from './page1/index';
 import Page2 from './page2/index';
 import Page3 from './page3/index';
 import flexpage from './flexprac/index';
+import login from './login/login';
 import resources from '../config/menu';
 injectTapEventPlugin();
 
+const RightElement =  <CircularProgress color="#fff" size={30} thickness={2} style={{ margin: 8 }} />;
 
 class Application extends Component {
   render() {
     return (
-      <div className="app-container">
-        <div className="app-header">
-          <MuiThemeProvider muiTheme={getMuiTheme()}>
-            <AppBar
+      <MuiThemeProvider muiTheme={getMuiTheme()}>
+        <div className="app-container">
+        <AppBar
               title="React学习项目"
-              iconClassNameRight="muidocs-icon-navigation-expand-more"/>
-          </MuiThemeProvider>
-        </div>
-        <div className="app-content">
-          <div className="app-navmenu">
-            <MuiThemeProvider muiTheme={getMuiTheme()}>
-              <div className="left-navbar">
-                <MenuExampleIcons resources={resources}></MenuExampleIcons>
-              </div>
-            </MuiThemeProvider>
-          </div>
-          <div className="app-panel">
-                {this.props.children}
+              iconElementRight={RightElement}/>
+          <div className="app-content">
+            <MenuExampleIcons resources={resources}></MenuExampleIcons>
+            <div className="app-panel">
+              {this.props.children}
+            </div>
           </div>
         </div>
-      </div>
+      </MuiThemeProvider>
+
     );
   }
 }
@@ -63,7 +59,7 @@ render((
         <Route path="page3" component={Page3}></Route>
         <Route path="flexpage" component={flexpage}></Route>
       </Route>
-      <Route path="/login" component={Application}>
+      <Route path="/login" component={login}>
       </Route>
     </Router>
   </Provider>
