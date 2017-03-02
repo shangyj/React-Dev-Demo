@@ -18,77 +18,33 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import Page1 from './page1/index';
 import Page2 from './page2/index';
 import Page3 from './page3/index';
+import flexpage from './flexprac/index';
+import resources from '../config/menu';
 injectTapEventPlugin();
+
+
 class Application extends Component {
   render() {
     return (
-      <div>
-        <MuiThemeProvider muiTheme={getMuiTheme()}>
-          <AppBar
-            title="ecp-portal-static"
-            iconClassNameRight="muidocs-icon-navigation-expand-more"/>
-        </MuiThemeProvider>
-        <div className="header">
-          <Link to="page1">普通查询</Link>
-          <Link to="page2">跨域查询</Link>
-          <Link to="page3">restfulapi</Link>
+      <div className="app-container">
+        <div className="app-header">
+          <MuiThemeProvider muiTheme={getMuiTheme()}>
+            <AppBar
+              title="React学习项目"
+              iconClassNameRight="muidocs-icon-navigation-expand-more"/>
+          </MuiThemeProvider>
         </div>
-        {this.props.children}
-        <div className="flex-container">
-
-          <div className="first-item">
-            <span className="circle"></span>
+        <div className="app-content">
+          <div className="app-navmenu">
+            <MuiThemeProvider muiTheme={getMuiTheme()}>
+              <div className="left-navbar">
+                <MenuExampleIcons resources={resources}></MenuExampleIcons>
+              </div>
+            </MuiThemeProvider>
           </div>
-
-          <div className="second-item">
-            <span className="circle"></span>
-            <span className="circle"></span>
+          <div className="app-panel">
+                {this.props.children}
           </div>
-
-          <div className="third-item">
-            <span className="circle"></span>
-            <span className="circle"></span>
-            <span className="circle"></span>
-          </div>
-
-          <div className="fourth-item">
-            <div className="column">
-              <span className="circle"></span>
-              <span className="circle"></span>
-            </div>
-            <div className="column">
-              <span className="circle"></span>
-              <span className="circle"></span>
-            </div>
-          </div>
-
-          <div className="fifth-item">
-            <div className="column">
-              <span className="circle"></span>
-              <span className="circle"></span>
-            </div>
-            <div className="column">
-              <span className="circle"></span>
-            </div>
-            <div className="column">
-              <span className="circle"></span>
-              <span className="circle"></span>
-            </div>
-          </div>
-
-          <div className="sixth-item">
-            <div className="column">
-              <span className="circle"></span>
-              <span className="circle"></span>
-              <span className="circle"></span>
-            </div>
-            <div className="column">
-              <span className="circle"></span>
-              <span className="circle"></span>
-              <span className="circle"></span>
-            </div>
-          </div>
-
         </div>
       </div>
     );
@@ -105,6 +61,9 @@ render((
         <Route path="page1" component={Page1}></Route>
         <Route path="page2" component={Page2}></Route>
         <Route path="page3" component={Page3}></Route>
+        <Route path="flexpage" component={flexpage}></Route>
+      </Route>
+      <Route path="/login" component={Application}>
       </Route>
     </Router>
   </Provider>

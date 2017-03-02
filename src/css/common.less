@@ -1,84 +1,21 @@
 body {
   margin: 0;
 }
-
-.header {
-  padding: 15px 20px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
-
-  a {
-    padding: 0 20px;
-  }
-}
-.flex-container{
+.app-container{
   display: flex;
-  background-color: black;
-  width: 70%;
-  height: 140px;
-  justify-content: space-around;
-  align-items:center;
-}
-[class$="item"]{
-  display: flex;
-  background-color: white;
-  width: 80px;
-  height: 80px;
-  border-radius: 10px;
-  padding: 5px;
-  box-shadow:
-  inset 0 5px white,
-  inset 0 -5px #bbb,
-  inset 5px 0 #d7d7d7,
-  inset -5px 0 #d7d7d7;
-}
-// [class$="item"]:nth-of-type(even){
-//   align-self: flex-start;
-// }
-.circle{
-  background-color: #0c0c7d;
-  width: 24px;
-  height: 24px;
-  border-radius: 12px;
-}
-.first-item, .fourth-item{
-  .circle{
-    background-color: #ca1919;
-  }
-}
-.first-item{
-  justify-content:center;
-  align-items: center;
-}
-.second-item{
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
 }
-.third-item{
-  justify-content: space-between;
-  .circle:nth-child(2){
-    align-self:center;
-  }
-  .circle:nth-child(3){
-    align-self: flex-end;
-  }
+.app-header, .app-footer{
+  flex: 1;
 }
-.fourth-item, .sixth-item{
-  justify-content: space-between;
-  .column{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+.app-content{
+  display: flex;
+  flex:1;
+  min-height: 500px;
 }
-.fifth-item{
-  justify-content: space-between;
-  .column{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .column:nth-of-type(even){
-    justify-content: center;
-  }
+.app-panel{
+  flex: 1;
+}
+.app-navmenu{
+  flex:0 0 14em;
 }
