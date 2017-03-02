@@ -22,7 +22,7 @@ const MenuExampleIcons = ({ resources }) => (
       <List>
         <ListItem
             key="logout"
-            containerElement={<Link to="logout"/>}
+            containerElement={<Link to="login"/>}
             primaryText="注销"
             leftIcon={<PowerSetting />}
 

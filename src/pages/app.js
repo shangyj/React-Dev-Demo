@@ -20,7 +20,7 @@ import Page1 from './page1/index';
 import Page2 from './page2/index';
 import Page3 from './page3/index';
 import flexpage from './flexprac/index';
-import login from './login/login';
+import login from './login/login.jsx';
 import resources from '../config/menu';
 injectTapEventPlugin();
 
