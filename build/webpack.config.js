@@ -63,7 +63,7 @@ alias = Object.assign(alias, {
 var config = {
   context: SRC_PATH,
   entry: {
-    app: [SRC_PATH + '/pages/app.js'],
+    app: [SRC_PATH + '/index.js'],
     lib: [
       'react', 'react-dom', 'react-router',
       'redux', 'react-redux', 'redux-thunk'
@@ -150,9 +150,9 @@ config.plugins.push(
 
 // 图片路径处理，压缩
 config.module.loaders.push({
-  test: /\.(?:jpg|gif|png|svg)$/,
+  test: /\.(?:jpg|gif|png|svg|ico)$/,
   loaders: [
-    'url?limit=8000&name=img/[hash].[ext]',
+    'url-loader?limit=8000&name=img/[hash].[ext]',
     'image-webpack-loader'
   ]
 });
@@ -185,7 +185,8 @@ config.plugins.push(
   new HtmlwebpackPlugin({
     filename: 'index.html',
     chunks: ['app', 'lib'],
-    template: SRC_PATH + '/pages/app.html',
+    template: SRC_PATH + '/index.html',
+    favicon:SRC_PATH + '/favicon.ico',
     minify: __DEV__ ? false : {
       collapseWhitespace: true,
       collapseInlineTagWhitespace: true,

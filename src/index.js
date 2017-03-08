@@ -4,14 +4,15 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import reducers from './reducers/index';
 import { Router, Route, IndexRoute, browserHistory, Link } from 'react-router';
-import reducers from 'reducers/index';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+
 import 'antd/dist/antd.less';
-import '../css/common.less';
-import Siderdmo from '../components/navigation/navition.jsx';
+import './css/common.less';
+import Siderdmo from './components/navigation/navition.js';
 // pages
-import Order from './order/index.jsx';
+import Order from './containers/Order/Order.js';
 const { Header, Content, Footer} = Layout;
 
 class Application extends Component {
