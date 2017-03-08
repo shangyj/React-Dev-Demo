@@ -63,7 +63,7 @@ class SiderDemo extends Component {
             <MenuItem key="8">
               <span>
                 <Icon type="file" />
-                <span className="nav-text"><Link to="/page1">人员管理</Link></span>
+                <span className="nav-text">人员管理</span>
               </span>
             </MenuItem>
           </Menu>

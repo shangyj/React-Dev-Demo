@@ -11,25 +11,23 @@ import 'antd/dist/antd.less';
 import '../css/common.less';
 import Siderdmo from '../components/navigation/navition.jsx';
 // pages
-import Page1 from './page1/index';
-import Page2 from './page2/index';
-import Page3 from './page3/index';
+import Order from './order/index.jsx';
 const { Header, Content, Footer} = Layout;
 
 class Application extends Component {
   render() {
     return (
-      <div id="components-layout-demo-side">
-        <Layout className="ant-layout-has-sider">
+      <div id="app-container">
+        <Layout className="ant-layout-has-sider" style={{height:"100vh"}}>
           <Siderdmo></Siderdmo>
-          <Layout>
+          <Layout style={{overflow:"auto",height:"100vh"}}>
             <Header style={{ background: '#fff', padding: 0 }} />
             <Content style={{ margin: '0 16px' }}>
               <Breadcrumb style={{ margin: '12px 0' }}>
                 <Breadcrumb.Item>订单</Breadcrumb.Item>
                 <Breadcrumb.Item>订单列表</Breadcrumb.Item>
               </Breadcrumb>
-              <div style={{ padding: 24, background: '#fff', minHeight: 540 }}>
+              <div style={{ padding: 24, background: '#fff'}}>
                 {this.props.children}
               </div>
             </Content>
@@ -49,10 +47,10 @@ render((
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={Application}>
-        <IndexRoute component={Page1}/>
-        <Route path="page1" component={Page1}></Route>
-        <Route path="page2" component={Page2}></Route>
-        <Route path="page3" component={Page3}></Route>
+        <IndexRoute component={Order}/>
+        <Route path="order" component={Order}></Route>
+        <Route path="product" component={Order}></Route>
+        <Route path="member" component={Order}></Route>
       </Route>
     </Router>
   </Provider>
