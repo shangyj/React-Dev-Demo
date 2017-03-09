@@ -1,23 +1,25 @@
 // application's entry
-import React, { Component } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import reducers from './reducers/index';
-import { Router, Route, IndexRoute, browserHistory, Link } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import configureStore from './store/configureStore';
+import { syncHistoryWithStore } from 'react-router-redux';
 import 'antd/dist/antd.less';
 import './css/common.less';
 
+//pages
+import App from './pages/App/App';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
-const store = createStore(reducers, {}, applyMiddleware(thunk));
+
+const store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store);
 
 render((
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <IndexRoute component={HomePage}/>
-        <Route path="order" component={ConnectedOrderPage}/>
         <Route path="*" component={NotFoundPage}/>
       </Route>
     </Router>

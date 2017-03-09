@@ -1,18 +1,12 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
-import Login from './../Login/Login';
+import Login from '../Login/Login';
 import { Link } from 'react-router';
 import './App.less';
 import { Menu, Breadcrumb, Icon } from 'antd';
 const SubMenu = Menu.SubMenu;
 
 class App extends Component {
-  static propTypes = {
-    children: PropTypes.element,
-    isAuthenticated: React.PropTypes.bool,
-    routing: PropTypes.object
-  };
-
   constructor(props) {
     super(props);
     this.renderAuthenticatedPage = this.renderAuthenticatedPage.bind(this);
@@ -47,8 +41,8 @@ class App extends Component {
           <div className="ant-layout-breadcrumb">
             <Breadcrumb>
               <Breadcrumb.Item>首页</Breadcrumb.Item>
-              <Breadcrumb.Item>用户管理</Breadcrumb.Item>
-              <Breadcrumb.Item>用户列表</Breadcrumb.Item>
+              <Breadcrumb.Item>订单管理</Breadcrumb.Item>
+              <Breadcrumb.Item>订单列表</Breadcrumb.Item>
             </Breadcrumb>
           </div>
           <div className="ant-layout-container">
@@ -75,6 +69,12 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  children: PropTypes.element,
+  isAuthenticated: React.PropTypes.bool,
+  routing: PropTypes.object
+};
 
 function mapStateToProps(state) {
   const { routing, auth: { isAuthenticated, user } } = state;
