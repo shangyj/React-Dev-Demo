@@ -6,10 +6,10 @@ if(process.env.NODE_ENV == "test"){
   host = location.origin;
 }
 
-const baseUri = host + "/test";
+const baseUri = host + "/ecmp/";
 export const API_CONFIG = {
   host: host,
   baseUri: baseUri,
   auth: 'auth',
-  users: 'users'
+  orders: 'orders'
 };

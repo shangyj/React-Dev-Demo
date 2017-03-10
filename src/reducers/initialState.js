@@ -6,7 +6,7 @@ export default {
     isFetching: false,
     isAuthenticated: cookie.get('access_token') ? true : false
   },
-  users: {
+  orders: {
     isFetching: false,
     meta: {
       total: 0,

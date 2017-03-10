@@ -69,6 +69,10 @@ new WebpackDevServer(webpack(config), {
     '/test': {
       target: 'http://10.11.98.91:8888/mockjsdata/1',
       changeOrigin: true
+    },
+    '/ecmp': {
+      target: 'http://10.11.98.91:8888/mockjsdata/1',
+      changeOrigin: true
     }
   },
 }).listen(PORT, HOST, function() {

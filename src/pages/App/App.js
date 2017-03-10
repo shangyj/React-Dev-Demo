@@ -26,13 +26,13 @@ class App extends Component {
           <div className="ant-layout-logo"/>
           <Menu mode="inline" theme="dark"
             defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']}>
-            <SubMenu key="sub1" title={<span><Icon type="user" />用户管理</span>}>
+            <SubMenu key="sub1" title={<span><Icon type="user" />订单管理</span>}>
               <Menu.Item key="1">
-                <Link to={'/users'}>
-                  用户列表
+                <Link to={'/order'}>
+                  订单列表
                 </Link>
               </Menu.Item>
-              <Menu.Item key="2">角色配置</Menu.Item>
+              <Menu.Item key="2">新增订单</Menu.Item>
             </SubMenu>
           </Menu>
         </aside>
@@ -47,7 +47,7 @@ class App extends Component {
           </div>
           <div className="ant-layout-container">
             <div className="ant-layout-content">
-              <div style={{ height: 590 }}>
+              <div style={{minHeight:"400px"}}>
                 {this.props.children}
               </div>
             </div>

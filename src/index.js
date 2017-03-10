@@ -10,6 +10,7 @@ import './css/common.less';
 
 //pages
 import App from './pages/App/App';
+import ConnectOrder from './pages/Order/Order';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 
@@ -20,7 +21,9 @@ render((
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
+        <Route path="order" component={ConnectOrder} />
         <Route path="*" component={NotFoundPage}/>
+
       </Route>
     </Router>
   </Provider>
