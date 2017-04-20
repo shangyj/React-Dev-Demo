@@ -67,6 +67,7 @@ class OrderPage extends Component {
           loading={isFetching}
           scroll={{ x: 1600}}
           />
+          {this.props.children}
       </div>
     );
   }

@@ -71,7 +71,7 @@ new WebpackDevServer(webpack(config), {
       changeOrigin: true
     },
     '/ecmp': {
-      target: 'http://10.11.98.91:8888/mockjsdata/1',
+      target: 'http://rapapi.org/mockjsdata/17597/auth',
       changeOrigin: true
     }
   },
